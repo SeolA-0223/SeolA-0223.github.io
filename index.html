@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SeolA-0223</title>
   <meta
     name="description"
-    content="SeolA-0223의 GitHub Pages 개인 사이트입니다."
+    content="Multi-page personal GitHub Pages site for SeolA-0223."
   >
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,66 +16,156 @@
   >
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="page-home">
   <div class="page-shell">
-    <header class="hero">
-      <p class="eyebrow">GitHub Pages Site</p>
-      <h1>SeolA-0223</h1>
-      <p class="hero-copy">
-        GitHub에서 바로 배포되는 개인 사이트입니다. 프로젝트, 소개, 링크를 이 한 페이지에서
-        시작할 수 있게 구성했습니다.
-      </p>
-      <div class="hero-actions">
-        <a class="button button-primary" href="https://github.com/SeolA-0223" target="_blank" rel="noreferrer">
-          GitHub 보기
-        </a>
-        <a class="button button-secondary" href="#projects">
-          섹션 이동
-        </a>
-      </div>
+    <header class="site-header surface">
+      <a class="brand" href="./">SeolA-0223</a>
+      <nav class="site-nav" aria-label="Primary">
+        <a class="nav-link is-active" href="./">Home</a>
+        <a class="nav-link" href="news/">News</a>
+        <a class="nav-link" href="research/">Research</a>
+        <a class="nav-link" href="publication/">Publication</a>
+        <a class="nav-link" href="team/">Team</a>
+        <a class="nav-link" href="teaching/">Teaching</a>
+        <a class="nav-link" href="contact/">Contact</a>
+      </nav>
     </header>
 
     <main>
-      <section class="panel intro">
-        <div>
-          <p class="section-label">About</p>
-          <h2>간단한 개인 허브로 시작</h2>
+      <section class="page-hero surface hero-grid">
+        <div class="hero-main">
+          <p class="eyebrow">Modern Personal Site</p>
+          <h1 class="page-title">A cleaner multi-page structure, with the dark mint style kept intact.</h1>
+          <p class="page-copy">
+            This site now follows a page-based layout inspired by academic personal websites:
+            a focused home page, separate detail pages, and a clear navigation system.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="https://github.com/SeolA-0223" target="_blank" rel="noreferrer">
+              Visit GitHub
+            </a>
+            <a class="button button-secondary" href="research/">
+              Explore Pages
+            </a>
+          </div>
         </div>
-        <p>
-          이 사이트는 GitHub Pages에 맞춘 순수 정적 페이지입니다. 별도 서버 없이 저장소에
-          푸시하면 바로 공개할 수 있고, 이후 포트폴리오나 블로그 첫 화면으로 확장하기 쉽습니다.
-        </p>
+
+        <aside class="hero-aside surface-strong">
+          <p class="section-label">Quick Snapshot</p>
+          <ul class="compact-list">
+            <li>Platform: GitHub Pages</li>
+            <li>Style: Dark, minimal, mint accent</li>
+            <li>Structure: Multi-page navigation</li>
+            <li>Owner: SeolA-0223</li>
+          </ul>
+        </aside>
       </section>
 
-      <section class="grid-section" id="projects">
-        <article class="card">
-          <p class="section-label">Profile</p>
-          <h3>소개 영역</h3>
-          <p>
-            이름, 관심 분야, 기술 스택, 연락 방법을 짧게 적는 구간입니다. 지금은 기본 문구만
-            넣어뒀고 바로 수정할 수 있게 단순하게 작성했습니다.
+      <section class="section-stack">
+        <div class="section-heading">
+          <p class="section-label">Overview</p>
+          <h2 class="section-title">Built to feel more organized from the first click</h2>
+          <p class="section-copy">
+            Instead of fitting everything into one long screen, each major topic now has its own
+            destination and a stronger sense of hierarchy.
           </p>
-        </article>
-        <article class="card">
-          <p class="section-label">Projects</p>
-          <h3>프로젝트 목록</h3>
-          <p>
-            대표 저장소 2~3개를 연결해 두면 GitHub 프로필보다 빠르게 핵심 작업을 보여줄 수
-            있습니다.
-          </p>
-        </article>
-        <article class="card">
-          <p class="section-label">Contact</p>
-          <h3>연락 링크</h3>
-          <p>
-            이메일, 인스타그램, 블로그, 노션 등 외부 채널을 추가하기 좋습니다. 공개용 사이트라면
-            민감한 개인정보는 넣지 않는 편이 안전합니다.
-          </p>
-        </article>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <p class="section-label">News</p>
+            <h3>Recent updates</h3>
+            <p>Use this page for announcements, progress logs, launch notes, or monthly updates.</p>
+            <a class="text-link" href="news/">Open page</a>
+          </article>
+          <article class="card">
+            <p class="section-label">Research</p>
+            <h3>Focus areas</h3>
+            <p>Show interests, themes, ongoing work, and the direction you want the site to communicate.</p>
+            <a class="text-link" href="research/">Open page</a>
+          </article>
+          <article class="card">
+            <p class="section-label">Publication</p>
+            <h3>Selected outputs</h3>
+            <p>Collect project links, writing, portfolios, case studies, or anything you want to feature.</p>
+            <a class="text-link" href="publication/">Open page</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-stack">
+        <div class="split-panel surface">
+          <div>
+            <p class="section-label">Structure</p>
+            <h2 class="section-title">Seven pages, one consistent visual system</h2>
+          </div>
+
+          <div class="metric-grid">
+            <div class="metric">
+              <strong>01</strong>
+              <span>Home</span>
+            </div>
+            <div class="metric">
+              <strong>02</strong>
+              <span>News</span>
+            </div>
+            <div class="metric">
+              <strong>03</strong>
+              <span>Research</span>
+            </div>
+            <div class="metric">
+              <strong>04</strong>
+              <span>Publication</span>
+            </div>
+            <div class="metric">
+              <strong>05</strong>
+              <span>Team</span>
+            </div>
+            <div class="metric">
+              <strong>06</strong>
+              <span>Teaching</span>
+            </div>
+            <div class="metric">
+              <strong>07</strong>
+              <span>Contact</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-stack">
+        <div class="section-heading">
+          <p class="section-label">Highlights</p>
+          <h2 class="section-title">Ready-made sections you can replace later</h2>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item">
+            <span class="timeline-date">Home</span>
+            <div>
+              <h3>Landing overview</h3>
+              <p>Introduces the site, the visual system, and the key places visitors should go next.</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <span class="timeline-date">Pages</span>
+            <div>
+              <h3>Dedicated detail views</h3>
+              <p>Each topic has its own page so the whole site feels less crowded and more deliberate.</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <span class="timeline-date">Theme</span>
+            <div>
+              <h3>Dark + mint direction</h3>
+              <p>The black base, white text, and mint accent remain the core identity across every page.</p>
+            </div>
+          </article>
+        </div>
       </section>
     </main>
 
-    <footer class="footer">
+    <footer class="footer surface">
       <p>Hosted with GitHub Pages</p>
       <a href="https://github.com/SeolA-0223" target="_blank" rel="noreferrer">@SeolA-0223</a>
     </footer>
