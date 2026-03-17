@@ -431,9 +431,15 @@ main {
   gap: 18px;
 }
 
+.board-sidebar {
+  display: grid;
+  gap: 18px;
+  align-content: start;
+}
+
 .board-stat-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 14px;
 }
 
@@ -455,6 +461,10 @@ main {
   margin-top: 10px;
   color: var(--muted);
   font-size: 0.94rem;
+}
+
+.board-updated-note {
+  margin-top: 16px;
 }
 
 .board-status {
@@ -482,7 +492,8 @@ main {
 }
 
 .board-composer h2,
-.board-feed-head h2 {
+.board-feed-head h2,
+.board-admin-panel h2 {
   margin: 0;
   font: 700 2rem/1.05 "Space Grotesk", sans-serif;
   letter-spacing: -0.045em;
@@ -516,6 +527,10 @@ main {
   transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
 }
 
+.field-input::placeholder {
+  color: rgba(244, 247, 246, 0.38);
+}
+
 .field-input:focus {
   outline: none;
   border-color: var(--line-strong);
@@ -542,6 +557,15 @@ main {
   flex-wrap: wrap;
 }
 
+.board-admin-panel {
+  display: grid;
+  gap: 18px;
+}
+
+.admin-session {
+  display: grid;
+}
+
 .board-feed-panel {
   display: grid;
   gap: 18px;
@@ -565,6 +589,8 @@ main {
   border-radius: 22px;
   border: 1px solid var(--line);
   background: rgba(8, 11, 11, 0.74);
+  display: grid;
+  gap: 16px;
 }
 
 .board-post-head {
@@ -594,6 +620,121 @@ main {
   word-break: break-word;
 }
 
+.board-post-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 14px;
+  flex-wrap: wrap;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+
+.board-post-note {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.board-post-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.board-inline-form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.board-inline-input {
+  min-width: 200px;
+  width: auto;
+}
+
+.board-comments-section {
+  display: grid;
+  gap: 14px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+
+.board-comments-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.board-comments-title {
+  margin: 0;
+  font: 700 1.02rem/1.2 "Space Grotesk", sans-serif;
+  letter-spacing: -0.02em;
+}
+
+.board-comment-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 34px;
+  min-height: 34px;
+  padding: 0 12px;
+  border-radius: 999px;
+  background: rgba(115, 255, 210, 0.1);
+  color: var(--brand);
+  font: 700 0.86rem/1 "Space Grotesk", sans-serif;
+}
+
+.board-comment-list {
+  display: grid;
+  gap: 10px;
+}
+
+.board-comment {
+  padding: 16px 18px;
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.board-comment-meta {
+  margin: 0 0 8px;
+  color: var(--brand);
+  font: 700 0.75rem/1.3 "Space Grotesk", sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.board-comment-body {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.72;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.board-comment-form {
+  display: grid;
+  gap: 12px;
+  padding: 18px;
+  border-radius: 20px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.board-inline-grid {
+  display: grid;
+  grid-template-columns: minmax(180px, 0.62fr) minmax(160px, 0.38fr);
+  gap: 12px;
+}
+
+.board-comment-form .field-textarea {
+  min-height: 120px;
+}
+
 .board-empty {
   margin: 0;
   padding: 26px 22px;
@@ -601,6 +742,21 @@ main {
   border: 1px dashed var(--line);
   color: var(--muted);
   background: rgba(255, 255, 255, 0.02);
+}
+
+.button-danger {
+  color: #ffeceb;
+  background: rgba(255, 118, 118, 0.1);
+  border-color: rgba(255, 118, 118, 0.22);
+}
+
+.button-danger:hover {
+  border-color: rgba(255, 118, 118, 0.34);
+  box-shadow: inset 0 0 0 1px rgba(255, 118, 118, 0.18);
+}
+
+.is-hidden {
+  display: none !important;
 }
 
 .button:disabled {
@@ -665,11 +821,30 @@ main {
   .metric-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .board-stat-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .board-inline-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 720px) {
   .timeline-item {
     grid-template-columns: 1fr;
+  }
+
+  .board-post-toolbar,
+  .board-post-actions,
+  .board-inline-form {
+    align-items: stretch;
+  }
+
+  .board-inline-input {
+    min-width: 0;
+    width: 100%;
   }
 }
 
@@ -699,6 +874,11 @@ main {
   .board-feed-head,
   .board-form-footer {
     align-items: flex-start;
+  }
+
+  .board-post-actions {
+    width: 100%;
+    justify-content: flex-start;
   }
 
   .metric-grid {

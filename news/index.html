@@ -32,10 +32,10 @@
       <section class="page-hero surface hero-grid">
         <div class="hero-main">
           <p class="eyebrow">Community Board</p>
-          <h1 class="page-title page-title-small">A live bulletin board connected to Supabase.</h1>
+          <h1 class="page-title page-title-small">A live bulletin board with comments, self-delete, and admin tools.</h1>
           <p class="page-copy">
             Visitors can leave short posts directly from this page. The feed below reads from the
-            <code>board_posts</code> table in your Supabase project and updates without any build step.
+            <code>board_posts</code> and <code>board_comments</code> tables in your Supabase project.
           </p>
           <div class="hero-actions">
             <button class="button button-primary" id="refresh-board" type="button">
@@ -55,10 +55,15 @@
               <span>Loaded posts</span>
             </div>
             <div class="board-stat">
-              <strong id="board-updated">-</strong>
-              <span>Last refresh</span>
+              <strong id="comment-count">0</strong>
+              <span>Loaded comments</span>
+            </div>
+            <div class="board-stat">
+              <strong id="board-session-state">Guest</strong>
+              <span>Session</span>
             </div>
           </div>
+          <p class="field-note board-updated-note">Last refresh <span id="board-updated">-</span></p>
           <p class="board-status board-status-loading" id="board-status" aria-live="polite">
             Checking Supabase connection...
           </p>
@@ -67,45 +72,102 @@
 
       <section class="section-stack">
         <div class="board-layout">
-          <article class="card board-composer">
-            <p class="section-label">Write</p>
-            <h2>Post a new message</h2>
-            <p class="section-copy">
-              This version allows public read and public insert. Editing and deletion are intentionally
-              left out until you add authentication.
-            </p>
+          <div class="board-sidebar">
+            <article class="card board-composer">
+              <p class="section-label">Write</p>
+              <h2>Post a new message</h2>
+              <p class="section-copy">
+                New posts are public. Add a delete password now if you want to remove your own post later.
+              </p>
 
-            <form class="board-form" id="board-form">
-              <label class="field">
-                <span class="field-label">Name</span>
-                <input class="field-input" id="board-name" name="name" type="text" maxlength="40" required>
-              </label>
+              <form class="board-form" id="board-form">
+                <label class="field">
+                  <span class="field-label">Name</span>
+                  <input class="field-input" id="board-name" name="name" type="text" maxlength="40" required>
+                </label>
 
-              <label class="field">
-                <span class="field-label">Title</span>
-                <input class="field-input" id="board-title" name="title" type="text" maxlength="120" required>
-              </label>
+                <label class="field">
+                  <span class="field-label">Title</span>
+                  <input class="field-input" id="board-title" name="title" type="text" maxlength="120" required>
+                </label>
 
-              <label class="field">
-                <span class="field-label">Message</span>
-                <textarea
-                  class="field-input field-textarea"
-                  id="board-content"
-                  name="content"
-                  rows="7"
-                  maxlength="2000"
-                  required
-                ></textarea>
-              </label>
+                <label class="field">
+                  <span class="field-label">Message</span>
+                  <textarea
+                    class="field-input field-textarea"
+                    id="board-content"
+                    name="content"
+                    rows="7"
+                    maxlength="2000"
+                    required
+                  ></textarea>
+                </label>
 
-              <div class="board-form-footer">
-                <p class="field-note">Keep posts short. HTML is not rendered.</p>
-                <button class="button button-primary" id="board-submit" type="submit">
-                  Publish post
-                </button>
+                <label class="field">
+                  <span class="field-label">Delete password</span>
+                  <input
+                    class="field-input"
+                    id="board-delete-password"
+                    name="delete_password"
+                    type="password"
+                    minlength="4"
+                    maxlength="72"
+                    required
+                  >
+                </label>
+
+                <div class="board-form-footer">
+                  <p class="field-note">HTML is not rendered. The delete password is used only for deleting this post later.</p>
+                  <button class="button button-primary" id="board-submit" type="submit">
+                    Publish post
+                  </button>
+                </div>
+              </form>
+            </article>
+
+            <article class="card board-admin-panel">
+              <p class="section-label">Admin</p>
+              <h2>Moderator login</h2>
+              <p class="section-copy">
+                Sign in with a Supabase Auth email/password account that has also been added to
+                <code>private.board_admins</code>.
+              </p>
+
+              <form class="board-form" id="admin-login-form">
+                <label class="field">
+                  <span class="field-label">Admin email</span>
+                  <input class="field-input" id="admin-email" name="email" type="email" autocomplete="username" required>
+                </label>
+
+                <label class="field">
+                  <span class="field-label">Password</span>
+                  <input
+                    class="field-input"
+                    id="admin-password"
+                    name="password"
+                    type="password"
+                    autocomplete="current-password"
+                    required
+                  >
+                </label>
+
+                <div class="board-form-footer">
+                  <p class="field-note">Admin delete controls appear only after a successful login and allowlist check.</p>
+                  <button class="button button-secondary" id="admin-login-button" type="submit">
+                    Sign in
+                  </button>
+                </div>
+              </form>
+
+              <div class="admin-session" id="admin-session" aria-live="polite">
+                <p class="board-empty">Signed out. Admin delete controls are hidden.</p>
               </div>
-            </form>
-          </article>
+
+              <button class="button button-secondary is-hidden" id="admin-logout" type="button">
+                Sign out
+              </button>
+            </article>
+          </div>
 
           <article class="card board-feed-panel">
             <div class="board-feed-head">
@@ -113,7 +175,7 @@
                 <p class="section-label">Feed</p>
                 <h2>Recent posts</h2>
               </div>
-              <p class="field-note">Newest messages appear first.</p>
+              <p class="field-note">Newest posts appear first. Each post can receive comments.</p>
             </div>
             <div class="board-feed" id="board-posts" aria-live="polite">
               <p class="board-empty">Loading posts...</p>
@@ -125,21 +187,22 @@
       <section class="section-stack">
         <div class="grid-2">
           <article class="card">
-            <p class="section-label">Schema</p>
-            <h3>What the board stores</h3>
+            <p class="section-label">Features</p>
+            <h3>What this board supports</h3>
             <ul class="bullet-list">
-              <li><code>name</code> for the writer</li>
-              <li><code>title</code> for a short subject line</li>
-              <li><code>content</code> for the body text</li>
-              <li><code>created_at</code> for sorting the feed</li>
+              <li>Public posts with password-based self-delete</li>
+              <li>Comments stored under each post</li>
+              <li>Admin login through Supabase Auth</li>
+              <li>Admin delete with comment cascade</li>
             </ul>
           </article>
           <article class="card">
-            <p class="section-label">Connection</p>
-            <h3>Powered by Supabase</h3>
+            <p class="section-label">Migration</p>
+            <h3>Run the updated SQL again</h3>
             <p>
-              The board reads and writes directly to Supabase. If the feed ever stops loading,
-              review the <code>board_posts</code> table and the public <code>SELECT</code>/<code>INSERT</code> policies.
+              This upgrade adds <code>board_comments</code>, RPC functions, and an admin allowlist.
+              Rerun <code>supabase/setup-board.sql</code>, then insert your admin email into
+              <code>private.board_admins</code>.
             </p>
           </article>
         </div>

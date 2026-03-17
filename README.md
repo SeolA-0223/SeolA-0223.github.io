@@ -15,8 +15,8 @@ The local folder can still be named `SeolA-0223`.
 - `index.html`: main page
 - `styles.css`: page styles
 - `news/index.html`: Supabase-backed board page
-- `news/board.js`: browser client for loading and creating board posts
-- `supabase/setup-board.sql`: SQL for the `board_posts` table and public policies
+- `news/board.js`: browser client for posts, comments, self-delete, and admin auth
+- `supabase/setup-board.sql`: SQL for posts, comments, RPC helpers, and admin policies
 
 ## Publish Flow
 
@@ -28,5 +28,13 @@ The local folder can still be named `SeolA-0223`.
 
 1. Open the Supabase SQL Editor for `uisuogutyhjnmgbgbdjs`.
 2. Run `supabase/setup-board.sql`.
-3. Push this repository and open `/news/`.
-4. Use the board form to create posts.
+3. If you already ran an older version of the SQL, run the updated file again.
+4. Push this repository and open `/news/`.
+5. Use the board form to create posts and comments.
+
+## Admin Login Setup
+
+1. Create an email/password user in Supabase Auth.
+2. Add that email to `private.board_admins`.
+3. Sign in from `/news/` with that same email and password.
+4. Admin delete controls will appear on every post.
