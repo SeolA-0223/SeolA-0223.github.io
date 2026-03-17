@@ -13,7 +13,7 @@
   >
   <link rel="stylesheet" href="../styles.css">
 </head>
-<body>
+<body class="page-board">
   <div class="page-shell">
     <header class="site-header surface">
       <a class="brand" href="../">SeolA-0223</a>
@@ -29,36 +29,94 @@
     </header>
 
     <main>
-      <section class="page-hero surface">
-        <p class="eyebrow">News</p>
-        <h1 class="page-title page-title-small">Updates, launches, and short progress logs.</h1>
-        <p class="page-copy">
-          This page is suited for recent milestones and status notes. Replace these placeholders with
-          actual updates whenever you publish something new.
-        </p>
+      <section class="page-hero surface hero-grid">
+        <div class="hero-main">
+          <p class="eyebrow">Community Board</p>
+          <h1 class="page-title page-title-small">A live bulletin board connected to Supabase.</h1>
+          <p class="page-copy">
+            Visitors can leave short posts directly from this page. The feed below reads from the
+            <code>board_posts</code> table in your Supabase project and updates without any build step.
+          </p>
+          <div class="hero-actions">
+            <button class="button button-primary" id="refresh-board" type="button">
+              Refresh posts
+            </button>
+            <a class="button button-secondary" href="https://supabase.com/dashboard" target="_blank" rel="noreferrer">
+              Open Supabase
+            </a>
+          </div>
+        </div>
+
+        <aside class="hero-aside surface-strong">
+          <p class="section-label">Board Status</p>
+          <div class="board-stat-grid">
+            <div class="board-stat">
+              <strong id="board-count">0</strong>
+              <span>Loaded posts</span>
+            </div>
+            <div class="board-stat">
+              <strong id="board-updated">-</strong>
+              <span>Last refresh</span>
+            </div>
+          </div>
+          <p class="board-status board-status-loading" id="board-status" aria-live="polite">
+            Checking Supabase connection...
+          </p>
+        </aside>
       </section>
 
       <section class="section-stack">
-        <div class="timeline">
-          <article class="timeline-item">
-            <span class="timeline-date">2026.03</span>
-            <div>
-              <h3>Site moved to a multi-page layout</h3>
-              <p>The homepage is now supported by dedicated pages for updates, work, contact, and more.</p>
-            </div>
+        <div class="board-layout">
+          <article class="card board-composer">
+            <p class="section-label">Write</p>
+            <h2>Post a new message</h2>
+            <p class="section-copy">
+              This version allows public read and public insert. Editing and deletion are intentionally
+              left out until you add authentication.
+            </p>
+
+            <form class="board-form" id="board-form">
+              <label class="field">
+                <span class="field-label">Name</span>
+                <input class="field-input" id="board-name" name="name" type="text" maxlength="40" required>
+              </label>
+
+              <label class="field">
+                <span class="field-label">Title</span>
+                <input class="field-input" id="board-title" name="title" type="text" maxlength="120" required>
+              </label>
+
+              <label class="field">
+                <span class="field-label">Message</span>
+                <textarea
+                  class="field-input field-textarea"
+                  id="board-content"
+                  name="content"
+                  rows="7"
+                  maxlength="2000"
+                  required
+                ></textarea>
+              </label>
+
+              <div class="board-form-footer">
+                <p class="field-note">Keep posts short. HTML is not rendered.</p>
+                <button class="button button-primary" id="board-submit" type="submit">
+                  Publish post
+                </button>
+              </div>
+            </form>
           </article>
-          <article class="timeline-item">
-            <span class="timeline-date">2026.03</span>
-            <div>
-              <h3>Dark mint design system applied</h3>
-              <p>The visual identity was refreshed with a black base, white typography, and mint accents.</p>
+
+          <article class="card board-feed-panel">
+            <div class="board-feed-head">
+              <div>
+                <p class="section-label">Feed</p>
+                <h2>Recent posts</h2>
+              </div>
+              <p class="field-note">Newest messages appear first.</p>
             </div>
-          </article>
-          <article class="timeline-item">
-            <span class="timeline-date">Next</span>
-            <div>
-              <h3>Personal content can be added page by page</h3>
-              <p>Use this area for update logs, release notes, certifications, or new portfolio entries.</p>
+            <div class="board-feed" id="board-posts" aria-live="polite">
+              <p class="board-empty">Loading posts...</p>
             </div>
           </article>
         </div>
@@ -67,21 +125,21 @@
       <section class="section-stack">
         <div class="grid-2">
           <article class="card">
-            <p class="section-label">Suggestions</p>
-            <h3>Good items for this page</h3>
+            <p class="section-label">Schema</p>
+            <h3>What the board stores</h3>
             <ul class="bullet-list">
-              <li>Project launch dates</li>
-              <li>Competition or class results</li>
-              <li>Design revisions</li>
-              <li>Monthly build-in-public notes</li>
+              <li><code>name</code> for the writer</li>
+              <li><code>title</code> for a short subject line</li>
+              <li><code>content</code> for the body text</li>
+              <li><code>created_at</code> for sorting the feed</li>
             </ul>
           </article>
           <article class="card">
-            <p class="section-label">Posting style</p>
-            <h3>Keep entries short</h3>
+            <p class="section-label">Setup</p>
+            <h3>Required Supabase step</h3>
             <p>
-              A compact timeline usually works better than long paragraphs here. Link out to a full
-              post only when a topic deserves more depth.
+              The table does not exist yet in your project. Run <code>supabase/setup-board.sql</code>
+              in the Supabase SQL Editor once, then refresh this page.
             </p>
           </article>
         </div>
@@ -93,5 +151,7 @@
       <a href="https://github.com/SeolA-0223" target="_blank" rel="noreferrer">@SeolA-0223</a>
     </footer>
   </div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="./board.js" defer></script>
 </body>
 </html>
