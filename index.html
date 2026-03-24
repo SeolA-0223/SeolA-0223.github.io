@@ -17,185 +17,237 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body class="page-home">
-  <div class="page-shell">
-    <header class="site-header surface">
-      <a class="brand" href="./">SeolA-0223</a>
-      <nav class="site-nav" aria-label="Primary">
-        <a class="nav-link is-active" href="./">홈</a>
-        <a class="nav-link" href="news/">뉴스</a>
-        <a class="nav-link" href="research/">연구</a>
-        <a class="nav-link" href="publication/">작업물</a>
-        <a class="nav-link" href="team/">팀</a>
-        <a class="nav-link" href="teaching/">학습</a>
-        <a class="nav-link" href="contact/">연락</a>
-        <div class="site-auth-bar" id="site-auth-bar">
+  <div class="home-layout">
+    <aside class="home-sidebar surface">
+      <section class="home-profile">
+        <img
+          class="home-avatar"
+          src="https://github.com/SeolA-0223.png"
+          alt="SeolA-0223 GitHub Avatar"
+        >
+        <div class="home-profile-copy">
+          <p class="home-sidebar-label">Profile</p>
+          <h1 class="home-name">SeolA-0223</h1>
+          <p class="home-role">개인 사이트 운영 / 포트폴리오 / 작업 기록</p>
+          <p class="home-bio">
+            GitHub Pages 위에서 연구형 홈페이지 구조를 참고해 다시 정리한 개인 사이트입니다.
+            공지, 작업물, 학습 기록, 연락 채널을 한 화면에서 빠르게 이동할 수 있게 구성했습니다.
+          </p>
+        </div>
+        <ul class="home-mini-list">
+          <li>Platform: GitHub Pages</li>
+          <li>Theme: Dark Mint</li>
+          <li>Auth: Supabase</li>
+        </ul>
+        <div class="home-quick-links">
+          <a class="home-quick-link" href="https://github.com/SeolA-0223" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="home-quick-link" href="news/">News Board</a>
+          <a class="home-quick-link" href="contact/">Contact</a>
+        </div>
+      </section>
+
+      <nav class="home-side-nav">
+        <p class="home-sidebar-label">Navigation</p>
+        <a class="home-side-link is-active" href="#home">홈</a>
+        <a class="home-side-link" href="#about">소개</a>
+        <a class="home-side-link" href="#focus">관심 분야</a>
+        <a class="home-side-link" href="#pages">페이지</a>
+        <a class="home-side-link" href="#member-access">멤버 액세스</a>
+      </nav>
+
+      <div class="home-sidebar-block">
+        <p class="home-sidebar-label">Language</p>
+        <div class="site-language-switcher home-sidebar-language" aria-label="언어 선택">
+          <a class="language-link is-active" href="./" lang="ko">KR</a>
+          <a class="language-link" href="en/" lang="en">EN</a>
+        </div>
+      </div>
+
+      <div class="home-sidebar-block">
+        <p class="home-sidebar-label">Session</p>
+        <div class="site-auth-bar home-auth-bar" id="site-auth-bar">
           <p class="site-auth-chip" id="site-auth-chip">게스트</p>
           <a class="button button-secondary" id="site-auth-entry" href="#member-access">로그인</a>
           <button class="button button-secondary is-hidden" data-site-auth-action="logout" type="button">
             로그아웃
           </button>
         </div>
-      </nav>
-    </header>
+      </div>
+    </aside>
 
-    <main>
-      <section class="page-hero surface hero-grid">
-        <div class="hero-main">
-          <p class="eyebrow">현대적인 개인 사이트</p>
-          <h1 class="page-title">다크 민트 분위기를 유지한 더 깔끔한 멀티페이지 구조.</h1>
-          <p class="page-copy">
-            이 사이트는 학술 개인 홈페이지에서 영감을 받은 페이지형 레이아웃을 따릅니다.
-            핵심 홈 화면, 주제별 세부 페이지, 그리고 더 분명한 내비게이션 구조로 정리했습니다.
+    <main class="home-main">
+      <section class="home-section" id="home">
+        <div class="home-hero-panel surface">
+          <p class="home-kicker">Academic-Style Layout</p>
+          <h2 class="home-hero-title">구조는 연구자 사이트처럼, 색감은 현재 민트/다크 톤 그대로 유지했습니다.</h2>
+          <p class="home-hero-copy">
+            좌측 프로필 사이드바와 우측 섹션형 카드 구성을 기준으로 홈을 다시 정렬했습니다.
+            방문자는 프로필, 현재 방향, 페이지 링크, 멤버 기능을 한 번에 확인할 수 있습니다.
           </p>
-          <div class="hero-actions">
+          <div class="home-badges">
+            <span class="home-badge">GitHub Pages</span>
+            <span class="home-badge">Fixed Sidebar</span>
+            <span class="home-badge">Supabase Auth</span>
+          </div>
+          <div class="home-actions">
             <a class="button button-primary" href="https://github.com/SeolA-0223" target="_blank" rel="noreferrer">
               GitHub 보기
             </a>
+            <a class="button button-secondary" href="news/">
+              게시판 열기
+            </a>
             <a class="button button-secondary" href="research/">
-              페이지 둘러보기
+              연구 페이지
             </a>
           </div>
         </div>
-
-        <aside class="hero-aside surface-strong">
-          <p class="section-label">한눈에 보기</p>
-          <ul class="compact-list">
-            <li>플랫폼: GitHub Pages</li>
-            <li>스타일: 다크, 미니멀, 민트 포인트</li>
-            <li>구조: 멀티페이지 내비게이션</li>
-            <li>운영자: SeolA-0223</li>
-          </ul>
-        </aside>
       </section>
 
-      <section class="section-stack">
-        <div class="section-heading">
-          <p class="section-label">개요</p>
-          <h2 class="section-title">첫 화면부터 더 정돈되어 보이도록 구성했습니다</h2>
-          <p class="section-copy">
-            하나의 긴 화면에 모든 내용을 넣는 대신, 주요 주제마다 전용 페이지를 두어
-            구조와 위계가 더 또렷하게 보이도록 만들었습니다.
-          </p>
-        </div>
-
-        <div class="grid-3">
-          <article class="card">
-            <p class="section-label">뉴스</p>
-            <h3>최근 업데이트</h3>
-            <p>공지, 작업 기록, 출시 노트, 월간 업데이트를 정리하는 공간으로 사용할 수 있습니다.</p>
-            <a class="text-link" href="news/">페이지 열기</a>
-          </article>
-          <article class="card">
-            <p class="section-label">연구</p>
-            <h3>관심 주제</h3>
-            <p>관심사, 주제, 진행 중인 작업, 그리고 사이트가 보여주고 싶은 방향을 정리할 수 있습니다.</p>
-            <a class="text-link" href="research/">페이지 열기</a>
-          </article>
-          <article class="card">
-            <p class="section-label">작업물</p>
-            <h3>선별된 결과물</h3>
-            <p>프로젝트 링크, 글, 포트폴리오, 케이스 스터디처럼 먼저 보여주고 싶은 결과물을 모아둘 수 있습니다.</p>
-            <a class="text-link" href="publication/">페이지 열기</a>
-          </article>
-        </div>
-      </section>
-
-      <section class="section-stack">
-        <div class="split-panel surface">
+      <section class="home-section" id="about">
+        <div class="home-section-head">
           <div>
-            <p class="section-label">구조</p>
-            <h2 class="section-title">7개의 페이지, 하나의 일관된 시각 시스템</h2>
+            <p class="home-section-subtitle">Overview</p>
+            <h2 class="home-section-title">이 사이트를 어떻게 읽으면 되는지 먼저 보여줍니다</h2>
           </div>
-
-          <div class="metric-grid">
-            <div class="metric">
-              <strong>01</strong>
-              <span>홈</span>
-            </div>
-            <div class="metric">
-              <strong>02</strong>
-              <span>뉴스</span>
-            </div>
-            <div class="metric">
-              <strong>03</strong>
-              <span>연구</span>
-            </div>
-            <div class="metric">
-              <strong>04</strong>
-              <span>작업물</span>
-            </div>
-            <div class="metric">
-              <strong>05</strong>
-              <span>팀</span>
-            </div>
-            <div class="metric">
-              <strong>06</strong>
-              <span>학습</span>
-            </div>
-            <div class="metric">
-              <strong>07</strong>
-              <span>연락</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section-stack">
-        <div class="section-heading">
-          <p class="section-label">하이라이트</p>
-          <h2 class="section-title">나중에 교체하기 쉬운 기본 섹션</h2>
+          <a class="button button-secondary" href="team/">프로필 자세히 보기</a>
         </div>
 
-        <div class="timeline">
-          <article class="timeline-item">
-            <span class="timeline-date">홈</span>
-            <div>
-              <h3>랜딩 개요</h3>
-              <p>사이트 소개, 시각 언어, 그리고 방문자가 다음에 어디로 가야 하는지를 첫 화면에서 바로 보여줍니다.</p>
-            </div>
+        <div class="home-card-grid home-card-grid-two">
+          <article class="card home-info-card">
+            <p class="home-card-eyebrow">Role</p>
+            <h3 class="home-card-title">개인 포트폴리오 + 공개 작업 노트</h3>
+            <p class="home-card-copy">
+              하나의 긴 랜딩 화면 대신, 핵심 소개는 홈에 두고 세부 내용은 각 전용 페이지로 분리했습니다.
+              그래서 구조가 훨씬 덜 복잡하고, 처음 보는 사람도 이동 경로를 바로 이해할 수 있습니다.
+            </p>
           </article>
-          <article class="timeline-item">
-            <span class="timeline-date">페이지</span>
-            <div>
-              <h3>주제별 상세 화면</h3>
-              <p>각 주제가 개별 페이지를 가지기 때문에 전체 사이트가 덜 복잡하고 더 의도적으로 보입니다.</p>
-            </div>
+
+          <article class="card home-info-card">
+            <p class="home-card-eyebrow">Direction</p>
+            <h3 class="home-card-title">정리된 구조 안에서 계속 업데이트되는 사이트</h3>
+            <p class="home-card-copy">
+              뉴스는 공지와 기록, 작업물은 결과물 정리, 학습은 반복 가능한 공부 흐름, 연락은 최소한의 채널만 남기는 방식으로 운영합니다.
+            </p>
           </article>
-          <article class="timeline-item">
-            <span class="timeline-date">테마</span>
-            <div>
-              <h3>다크 + 민트 방향성</h3>
-              <p>검은 배경, 밝은 텍스트, 민트 포인트라는 핵심 정체성을 모든 페이지에 유지합니다.</p>
+
+          <article class="card home-info-card home-card-span-2">
+            <p class="home-card-eyebrow">Structure</p>
+            <h3 class="home-card-title">현재 홈에서 바로 갈 수 있는 주요 흐름</h3>
+            <div class="home-card-tags">
+              <span class="home-tag">News</span>
+              <span class="home-tag">Research</span>
+              <span class="home-tag">Publication</span>
+              <span class="home-tag">Team</span>
+              <span class="home-tag">Teaching</span>
+              <span class="home-tag">Contact</span>
             </div>
+            <p class="home-card-copy">
+              이 홈은 모든 페이지의 출발점 역할을 합니다. 사이드바에서 바로 섹션으로 점프하고, 카드에서 세부 페이지로 이동할 수 있게 배치했습니다.
+            </p>
           </article>
         </div>
       </section>
 
-      <section class="section-stack" id="member-access">
-        <div class="section-heading">
-          <p class="section-label">멤버 액세스</p>
-          <h2 class="section-title">GitHub Pages 안에서 바로 계정 기반 접근을 추가했습니다</h2>
-          <p class="section-copy">
-            이 사이트는 이제 Supabase Auth 기반 이메일/비밀번호 회원가입과 로그인을 지원합니다.
-            세션은 라이브 게시판을 포함한 모든 페이지에서 유지됩니다.
-          </p>
+      <section class="home-section" id="focus">
+        <div class="home-section-head">
+          <div>
+            <p class="home-section-subtitle">Research Areas</p>
+            <h2 class="home-section-title">현재 사이트가 가리키는 세 가지 관심 축</h2>
+          </div>
+          <a class="button button-secondary" href="research/">연구 페이지 열기</a>
         </div>
 
-        <div class="site-language-switcher site-language-switcher-panel" aria-label="언어 선택">
-          <a class="language-link is-active" href="./" lang="ko">KR</a>
-          <a class="language-link" href="en/" lang="en">EN</a>
+        <div class="home-card-grid home-card-grid-three">
+          <article class="card home-info-card">
+            <p class="home-card-eyebrow">Focus 01</p>
+            <h3 class="home-card-title">창의 기술</h3>
+            <p class="home-card-copy">
+              인터랙티브 웹 경험, 시각적 스토리텔링, 그리고 인상적인 프런트엔드 화면 구성을 중심으로 작업합니다.
+            </p>
+          </article>
+          <article class="card home-info-card">
+            <p class="home-card-eyebrow">Focus 02</p>
+            <h3 class="home-card-title">AI 보조 제작</h3>
+            <p class="home-card-copy">
+              아이디어에서 초안, 결과물까지 빠르게 이동할 수 있도록 도구와 워크플로를 계속 다듬습니다.
+            </p>
+          </article>
+          <article class="card home-info-card">
+            <p class="home-card-eyebrow">Focus 03</p>
+            <h3 class="home-card-title">개인 시스템</h3>
+            <p class="home-card-copy">
+              노트, 프로젝트, 실험을 반복 가능한 시스템 안에 정리해 사이트와 작업 흐름이 함께 커지도록 설계합니다.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="home-section" id="pages">
+        <div class="home-section-head">
+          <div>
+            <p class="home-section-subtitle">Pages</p>
+            <h2 class="home-section-title">기존 다중 페이지 구성을 카드 중심으로 다시 배치했습니다</h2>
+          </div>
+        </div>
+
+        <div class="home-card-grid home-card-grid-three">
+          <article class="card home-info-card">
+            <p class="home-card-eyebrow">News</p>
+            <h3 class="home-card-title">최근 공지와 게시판</h3>
+            <p class="home-card-copy">실시간 게시판, 업데이트 기록, 댓글 기능을 운영하는 공간입니다.</p>
+            <a class="text-link" href="news/">Open page</a>
+          </article>
+          <article class="card home-info-card">
+            <p class="home-card-eyebrow">Publication</p>
+            <h3 class="home-card-title">선별한 결과물</h3>
+            <p class="home-card-copy">눈에 띄게 보여주고 싶은 프로젝트와 결과물을 정리합니다.</p>
+            <a class="text-link" href="publication/">Open page</a>
+          </article>
+          <article class="card home-info-card">
+            <p class="home-card-eyebrow">Teaching</p>
+            <h3 class="home-card-title">학습 기록과 자료</h3>
+            <p class="home-card-copy">반복해서 참고할 자료, 학습 트랙, 정리 노트를 모아 둡니다.</p>
+            <a class="text-link" href="teaching/">Open page</a>
+          </article>
+          <article class="card home-info-card">
+            <p class="home-card-eyebrow">Team</p>
+            <h3 class="home-card-title">프로필과 역할</h3>
+            <p class="home-card-copy">개인 소개, 협업 방식, 현재 역할을 요약해 보여줍니다.</p>
+            <a class="text-link" href="team/">Open page</a>
+          </article>
+          <article class="card home-info-card">
+            <p class="home-card-eyebrow">Research</p>
+            <h3 class="home-card-title">관심 주제</h3>
+            <p class="home-card-copy">주제, 방향, 질문 중심으로 현재의 사고 흐름을 정리합니다.</p>
+            <a class="text-link" href="research/">Open page</a>
+          </article>
+          <article class="card home-info-card">
+            <p class="home-card-eyebrow">Contact</p>
+            <h3 class="home-card-title">연락 채널</h3>
+            <p class="home-card-copy">GitHub와 추가 연락 채널을 간단하게 정리한 페이지입니다.</p>
+            <a class="text-link" href="contact/">Open page</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="home-section" id="member-access">
+        <div class="home-section-head">
+          <div>
+            <p class="home-section-subtitle">Member Access</p>
+            <h2 class="home-section-title">기존 로그인과 회원가입 기능은 새 레이아웃 안에 그대로 유지했습니다</h2>
+          </div>
         </div>
 
         <p class="board-status board-status-loading" id="site-auth-status" aria-live="polite">
           현재 세션을 확인하는 중...
         </p>
 
-        <div class="grid-3 auth-grid">
-          <article class="card auth-panel" data-site-auth-guest>
-            <p class="section-label">회원가입</p>
-            <h3>멤버 계정 만들기</h3>
-            <p class="section-copy">
-              이메일 주소와 비밀번호로 이 사이트에서 재사용할 수 있는 계정을 만들 수 있습니다.
+        <div class="home-auth-layout">
+          <article class="card home-info-card auth-panel" data-site-auth-guest>
+            <p class="home-card-eyebrow">Sign Up</p>
+            <h3 class="home-card-title">멤버 계정 만들기</h3>
+            <p class="home-card-copy">
+              이메일과 비밀번호로 계정을 만든 뒤, 뉴스 게시판과 사이트 전체에서 같은 세션을 사용할 수 있습니다.
             </p>
 
             <form class="board-form" id="site-signup-form">
@@ -225,11 +277,11 @@
             </form>
           </article>
 
-          <article class="card auth-panel" data-site-auth-guest>
-            <p class="section-label">로그인</p>
-            <h3>기존 세션 다시 불러오기</h3>
-            <p class="section-copy">
-              같은 이메일/비밀번호 계정으로 로그인하면 사이트 전체에서 멤버 세션을 재사용할 수 있습니다.
+          <article class="card home-info-card auth-panel" data-site-auth-guest>
+            <p class="home-card-eyebrow">Login</p>
+            <h3 class="home-card-title">기존 세션 다시 불러오기</h3>
+            <p class="home-card-copy">
+              이미 만든 이메일/비밀번호 계정으로 로그인하면 홈과 게시판 모두에서 세션이 유지됩니다.
             </p>
 
             <form class="board-form" id="site-login-form">
@@ -258,9 +310,9 @@
             </form>
           </article>
 
-          <article class="card auth-panel">
-            <p class="section-label">세션</p>
-            <h3>현재 멤버 상태</h3>
+          <article class="card home-info-card auth-panel">
+            <p class="home-card-eyebrow">Session</p>
+            <h3 class="home-card-title">현재 멤버 상태</h3>
             <div class="auth-summary">
               <p class="field-note">로그인된 이메일</p>
               <p class="auth-session-email" id="site-auth-email">로그인되지 않음</p>
@@ -274,17 +326,12 @@
               </button>
             </div>
             <p class="field-note" data-site-auth-guest>
-              로그인하면 헤더와 이 영역의 세션 상태가 자동으로 함께 갱신됩니다.
+              로그인 후에는 사이드바 세션 상태와 이 영역이 함께 갱신됩니다.
             </p>
           </article>
         </div>
       </section>
     </main>
-
-    <footer class="footer surface">
-      <p>GitHub Pages로 호스팅 중</p>
-      <a href="https://github.com/SeolA-0223" target="_blank" rel="noreferrer">@SeolA-0223</a>
-    </footer>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="./auth.js" defer></script>

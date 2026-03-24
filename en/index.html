@@ -17,185 +17,239 @@
   <link rel="stylesheet" href="../styles.css">
 </head>
 <body class="page-home">
-  <div class="page-shell">
-    <header class="site-header surface">
-      <a class="brand" href="./">SeolA-0223</a>
-      <nav class="site-nav" aria-label="Primary">
-        <a class="nav-link is-active" href="./">Home</a>
-        <a class="nav-link" href="news/">News</a>
-        <a class="nav-link" href="research/">Research</a>
-        <a class="nav-link" href="publication/">Publication</a>
-        <a class="nav-link" href="team/">Team</a>
-        <a class="nav-link" href="teaching/">Teaching</a>
-        <a class="nav-link" href="contact/">Contact</a>
-        <div class="site-auth-bar" id="site-auth-bar">
+  <div class="home-layout">
+    <aside class="home-sidebar surface">
+      <section class="home-profile">
+        <img
+          class="home-avatar"
+          src="https://github.com/SeolA-0223.png"
+          alt="SeolA-0223 GitHub Avatar"
+        >
+        <div class="home-profile-copy">
+          <p class="home-sidebar-label">Profile</p>
+          <h1 class="home-name">SeolA-0223</h1>
+          <p class="home-role">Personal site / portfolio / work log</p>
+          <p class="home-bio">
+            This home page has been rebuilt around an academic-style structure with a fixed profile sidebar,
+            section-based cards, and direct navigation into the rest of the site.
+          </p>
+        </div>
+        <ul class="home-mini-list">
+          <li>Platform: GitHub Pages</li>
+          <li>Theme: Dark Mint</li>
+          <li>Auth: Supabase</li>
+        </ul>
+        <div class="home-quick-links">
+          <a class="home-quick-link" href="https://github.com/SeolA-0223" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="home-quick-link" href="news/">News Board</a>
+          <a class="home-quick-link" href="contact/">Contact</a>
+        </div>
+      </section>
+
+      <nav class="home-side-nav">
+        <p class="home-sidebar-label">Navigation</p>
+        <a class="home-side-link is-active" href="#home">Home</a>
+        <a class="home-side-link" href="#about">About</a>
+        <a class="home-side-link" href="#focus">Focus</a>
+        <a class="home-side-link" href="#pages">Pages</a>
+        <a class="home-side-link" href="#member-access">Member Access</a>
+      </nav>
+
+      <div class="home-sidebar-block">
+        <p class="home-sidebar-label">Language</p>
+        <div class="site-language-switcher home-sidebar-language" aria-label="Language selector">
+          <a class="language-link" href="../" lang="ko">KR</a>
+          <a class="language-link is-active" href="./" lang="en">EN</a>
+        </div>
+      </div>
+
+      <div class="home-sidebar-block">
+        <p class="home-sidebar-label">Session</p>
+        <div class="site-auth-bar home-auth-bar" id="site-auth-bar">
           <p class="site-auth-chip" id="site-auth-chip">Guest</p>
           <a class="button button-secondary" id="site-auth-entry" href="#member-access">Sign in</a>
           <button class="button button-secondary is-hidden" data-site-auth-action="logout" type="button">
             Sign out
           </button>
         </div>
-      </nav>
-    </header>
+      </div>
+    </aside>
 
-    <main>
-      <section class="page-hero surface hero-grid">
-        <div class="hero-main">
-          <p class="eyebrow">Modern Personal Site</p>
-          <h1 class="page-title">A cleaner multi-page structure, with the dark mint style kept intact.</h1>
-          <p class="page-copy">
-            This site now follows a page-based layout inspired by academic personal websites:
-            a focused home page, separate detail pages, and a clear navigation system.
+    <main class="home-main">
+      <section class="home-section" id="home">
+        <div class="home-hero-panel surface">
+          <p class="home-kicker">Academic-Style Layout</p>
+          <h2 class="home-hero-title">The structure now follows a research-style homepage while keeping your current dark mint palette.</h2>
+          <p class="home-hero-copy">
+            The landing page is now organized around a fixed profile sidebar and section-based cards,
+            so visitors can understand who you are, what you focus on, and where to go next without scanning a long page.
           </p>
-          <div class="hero-actions">
+          <div class="home-badges">
+            <span class="home-badge">GitHub Pages</span>
+            <span class="home-badge">Fixed Sidebar</span>
+            <span class="home-badge">Supabase Auth</span>
+          </div>
+          <div class="home-actions">
             <a class="button button-primary" href="https://github.com/SeolA-0223" target="_blank" rel="noreferrer">
               Visit GitHub
             </a>
+            <a class="button button-secondary" href="news/">
+              Open board
+            </a>
             <a class="button button-secondary" href="research/">
-              Explore Pages
+              Research page
             </a>
           </div>
         </div>
-
-        <aside class="hero-aside surface-strong">
-          <p class="section-label">Quick Snapshot</p>
-          <ul class="compact-list">
-            <li>Platform: GitHub Pages</li>
-            <li>Style: Dark, minimal, mint accent</li>
-            <li>Structure: Multi-page navigation</li>
-            <li>Owner: SeolA-0223</li>
-          </ul>
-        </aside>
       </section>
 
-      <section class="section-stack">
-        <div class="section-heading">
-          <p class="section-label">Overview</p>
-          <h2 class="section-title">Built to feel more organized from the first click</h2>
-          <p class="section-copy">
-            Instead of fitting everything into one long screen, each major topic now has its own
-            destination and a stronger sense of hierarchy.
-          </p>
+      <section class="home-section" id="about">
+        <div class="home-section-head">
+          <div>
+            <p class="home-section-subtitle">Overview</p>
+            <h2 class="home-section-title">The home page now explains the site structure before the details</h2>
+          </div>
+          <a class="button button-secondary" href="team/">Open profile page</a>
         </div>
 
-        <div class="grid-3">
-          <article class="card">
-            <p class="section-label">News</p>
-            <h3>Recent updates</h3>
-            <p>Use this page for announcements, progress logs, launch notes, or monthly updates.</p>
+        <div class="home-card-grid home-card-grid-two">
+          <article class="card home-info-card">
+            <p class="home-card-eyebrow">Role</p>
+            <h3 class="home-card-title">Portfolio and public work notes in one place</h3>
+            <p class="home-card-copy">
+              Instead of pushing everything into a single long landing page, the site now keeps the summary here
+              and moves detailed content into separate destination pages.
+            </p>
+          </article>
+
+          <article class="card home-info-card">
+            <p class="home-card-eyebrow">Direction</p>
+            <h3 class="home-card-title">A cleaner structure that can keep growing over time</h3>
+            <p class="home-card-copy">
+              News handles announcements and logs, publication collects featured output,
+              teaching works like a study archive, and contact stays short and practical.
+            </p>
+          </article>
+
+          <article class="card home-info-card home-card-span-2">
+            <p class="home-card-eyebrow">Structure</p>
+            <h3 class="home-card-title">Main flows currently connected from this home page</h3>
+            <div class="home-card-tags">
+              <span class="home-tag">News</span>
+              <span class="home-tag">Research</span>
+              <span class="home-tag">Publication</span>
+              <span class="home-tag">Team</span>
+              <span class="home-tag">Teaching</span>
+              <span class="home-tag">Contact</span>
+            </div>
+            <p class="home-card-copy">
+              This landing page is now the hub. The sidebar handles quick in-page jumps,
+              while the cards route visitors into each detailed section of the site.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="home-section" id="focus">
+        <div class="home-section-head">
+          <div>
+            <p class="home-section-subtitle">Research Areas</p>
+            <h2 class="home-section-title">Three focus areas currently shaping the site</h2>
+          </div>
+          <a class="button button-secondary" href="research/">Open research page</a>
+        </div>
+
+        <div class="home-card-grid home-card-grid-three">
+          <article class="card home-info-card">
+            <p class="home-card-eyebrow">Focus 01</p>
+            <h3 class="home-card-title">Creative technology</h3>
+            <p class="home-card-copy">
+              Interactive web experiences, visual storytelling, and front-end work with a clear visual point of view.
+            </p>
+          </article>
+          <article class="card home-info-card">
+            <p class="home-card-eyebrow">Focus 02</p>
+            <h3 class="home-card-title">AI-assisted making</h3>
+            <p class="home-card-copy">
+              Tool-supported workflows that move from idea to draft to finished output with less friction.
+            </p>
+          </article>
+          <article class="card home-info-card">
+            <p class="home-card-eyebrow">Focus 03</p>
+            <h3 class="home-card-title">Personal systems</h3>
+            <p class="home-card-copy">
+              Repeatable structures for notes, projects, experiments, and the way they connect back to the site.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="home-section" id="pages">
+        <div class="home-section-head">
+          <div>
+            <p class="home-section-subtitle">Pages</p>
+            <h2 class="home-section-title">The multi-page site is now presented as a card-based content map</h2>
+          </div>
+        </div>
+
+        <div class="home-card-grid home-card-grid-three">
+          <article class="card home-info-card">
+            <p class="home-card-eyebrow">News</p>
+            <h3 class="home-card-title">Updates and live board</h3>
+            <p class="home-card-copy">Announcements, logs, comments, and the live Supabase-backed board.</p>
             <a class="text-link" href="news/">Open page</a>
           </article>
-          <article class="card">
-            <p class="section-label">Research</p>
-            <h3>Focus areas</h3>
-            <p>Show interests, themes, ongoing work, and the direction you want the site to communicate.</p>
-            <a class="text-link" href="research/">Open page</a>
-          </article>
-          <article class="card">
-            <p class="section-label">Publication</p>
-            <h3>Selected outputs</h3>
-            <p>Collect project links, writing, portfolios, case studies, or anything you want to feature.</p>
+          <article class="card home-info-card">
+            <p class="home-card-eyebrow">Publication</p>
+            <h3 class="home-card-title">Featured output</h3>
+            <p class="home-card-copy">Selected projects and artifacts you want visitors to notice first.</p>
             <a class="text-link" href="publication/">Open page</a>
           </article>
+          <article class="card home-info-card">
+            <p class="home-card-eyebrow">Teaching</p>
+            <h3 class="home-card-title">Learning archive</h3>
+            <p class="home-card-copy">Study tracks, notes, and reusable reference material.</p>
+            <a class="text-link" href="teaching/">Open page</a>
+          </article>
+          <article class="card home-info-card">
+            <p class="home-card-eyebrow">Team</p>
+            <h3 class="home-card-title">Profile and role</h3>
+            <p class="home-card-copy">A compact summary of who you are and how you work.</p>
+            <a class="text-link" href="team/">Open page</a>
+          </article>
+          <article class="card home-info-card">
+            <p class="home-card-eyebrow">Research</p>
+            <h3 class="home-card-title">Themes and questions</h3>
+            <p class="home-card-copy">Current interests, topics, and the direction behind the site.</p>
+            <a class="text-link" href="research/">Open page</a>
+          </article>
+          <article class="card home-info-card">
+            <p class="home-card-eyebrow">Contact</p>
+            <h3 class="home-card-title">Contact channels</h3>
+            <p class="home-card-copy">Short, practical links for code, reach-out, and public identity.</p>
+            <a class="text-link" href="contact/">Open page</a>
+          </article>
         </div>
       </section>
 
-      <section class="section-stack">
-        <div class="split-panel surface">
+      <section class="home-section" id="member-access">
+        <div class="home-section-head">
           <div>
-            <p class="section-label">Structure</p>
-            <h2 class="section-title">Seven pages, one consistent visual system</h2>
+            <p class="home-section-subtitle">Member Access</p>
+            <h2 class="home-section-title">Sign-up and sign-in stay intact inside the new layout</h2>
           </div>
-
-          <div class="metric-grid">
-            <div class="metric">
-              <strong>01</strong>
-              <span>Home</span>
-            </div>
-            <div class="metric">
-              <strong>02</strong>
-              <span>News</span>
-            </div>
-            <div class="metric">
-              <strong>03</strong>
-              <span>Research</span>
-            </div>
-            <div class="metric">
-              <strong>04</strong>
-              <span>Publication</span>
-            </div>
-            <div class="metric">
-              <strong>05</strong>
-              <span>Team</span>
-            </div>
-            <div class="metric">
-              <strong>06</strong>
-              <span>Teaching</span>
-            </div>
-            <div class="metric">
-              <strong>07</strong>
-              <span>Contact</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section-stack">
-        <div class="section-heading">
-          <p class="section-label">Highlights</p>
-          <h2 class="section-title">Ready-made sections you can replace later</h2>
-        </div>
-
-        <div class="timeline">
-          <article class="timeline-item">
-            <span class="timeline-date">Home</span>
-            <div>
-              <h3>Landing overview</h3>
-              <p>Introduces the site, the visual system, and the key places visitors should go next.</p>
-            </div>
-          </article>
-          <article class="timeline-item">
-            <span class="timeline-date">Pages</span>
-            <div>
-              <h3>Dedicated detail views</h3>
-              <p>Each topic has its own page so the whole site feels less crowded and more deliberate.</p>
-            </div>
-          </article>
-          <article class="timeline-item">
-            <span class="timeline-date">Theme</span>
-            <div>
-              <h3>Dark + mint direction</h3>
-              <p>The black base, white text, and mint accent remain the core identity across every page.</p>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section class="section-stack" id="member-access">
-        <div class="section-heading">
-          <p class="section-label">Member Access</p>
-          <h2 class="section-title">Add account-based access without leaving GitHub Pages</h2>
-          <p class="section-copy">
-            This site now uses Supabase Auth for email/password sign-up and sign-in. Sessions persist
-            across every page, including the live board.
-          </p>
-        </div>
-
-        <div class="site-language-switcher site-language-switcher-panel" aria-label="Language selector">
-          <a class="language-link" href="../" lang="ko">KR</a>
-          <a class="language-link is-active" href="./" lang="en">EN</a>
         </div>
 
         <p class="board-status board-status-loading" id="site-auth-status" aria-live="polite">
           Checking your current session...
         </p>
 
-        <div class="grid-3 auth-grid">
-          <article class="card auth-panel" data-site-auth-guest>
-            <p class="section-label">Sign Up</p>
-            <h3>Create a member account</h3>
-            <p class="section-copy">
-              Use an email address and password to create a reusable account for this site.
+        <div class="home-auth-layout">
+          <article class="card home-info-card auth-panel" data-site-auth-guest>
+            <p class="home-card-eyebrow">Sign Up</p>
+            <h3 class="home-card-title">Create a member account</h3>
+            <p class="home-card-copy">
+              Create an email/password account and reuse the same session across this home page and the live board.
             </p>
 
             <form class="board-form" id="site-signup-form">
@@ -225,11 +279,11 @@
             </form>
           </article>
 
-          <article class="card auth-panel" data-site-auth-guest>
-            <p class="section-label">Login</p>
-            <h3>Restore an existing session</h3>
-            <p class="section-copy">
-              Sign in with the same email/password account to reuse your member session on every page.
+          <article class="card home-info-card auth-panel" data-site-auth-guest>
+            <p class="home-card-eyebrow">Login</p>
+            <h3 class="home-card-title">Restore an existing session</h3>
+            <p class="home-card-copy">
+              Sign back in with the same email/password account and keep the session active throughout the site.
             </p>
 
             <form class="board-form" id="site-login-form">
@@ -250,7 +304,7 @@
               </label>
 
               <div class="board-form-footer">
-                <p class="field-note">This uses the same Supabase Auth project as the admin board login.</p>
+                <p class="field-note">This uses the same Supabase Auth project as the board admin login.</p>
                 <button class="button button-secondary" id="site-login-button" type="submit">
                   Sign in
                 </button>
@@ -258,9 +312,9 @@
             </form>
           </article>
 
-          <article class="card auth-panel">
-            <p class="section-label">Session</p>
-            <h3>Current member status</h3>
+          <article class="card home-info-card auth-panel">
+            <p class="home-card-eyebrow">Session</p>
+            <h3 class="home-card-title">Current member state</h3>
             <div class="auth-summary">
               <p class="field-note">Signed-in email</p>
               <p class="auth-session-email" id="site-auth-email">Not signed in</p>
@@ -274,17 +328,12 @@
               </button>
             </div>
             <p class="field-note" data-site-auth-guest>
-              Once you sign in, the session state here and in the header updates automatically.
+              Once signed in, the sidebar session block and this section update together.
             </p>
           </article>
         </div>
       </section>
     </main>
-
-    <footer class="footer surface">
-      <p>Hosted with GitHub Pages</p>
-      <a href="https://github.com/SeolA-0223" target="_blank" rel="noreferrer">@SeolA-0223</a>
-    </footer>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="../auth.js" defer></script>
