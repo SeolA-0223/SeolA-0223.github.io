@@ -14,6 +14,10 @@
     href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Noto+Sans+KR:wght@400;500;700&display=swap"
     rel="stylesheet"
   >
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  >
   <link rel="stylesheet" href="../styles.css">
 </head>
 <body class="page-home">
@@ -34,25 +38,34 @@
             section-based cards, and direct navigation into the rest of the site.
           </p>
         </div>
-        <ul class="home-mini-list">
-          <li>Platform: GitHub Pages</li>
-          <li>Theme: Dark Mint</li>
-          <li>Auth: Supabase</li>
+        <ul class="home-profile-facts">
+          <li class="home-fact"><i class="fas fa-globe" aria-hidden="true"></i><span>Built on GitHub Pages</span></li>
+          <li class="home-fact"><i class="fas fa-palette" aria-hidden="true"></i><span>Dark Mint palette</span></li>
+          <li class="home-fact"><i class="fas fa-user-shield" aria-hidden="true"></i><span>Supabase auth</span></li>
         </ul>
-        <div class="home-quick-links">
-          <a class="home-quick-link" href="https://github.com/SeolA-0223" target="_blank" rel="noreferrer">GitHub</a>
-          <a class="home-quick-link" href="news/">News Board</a>
-          <a class="home-quick-link" href="contact/">Contact</a>
+        <div class="home-quick-links" aria-label="Quick links">
+          <a class="home-quick-link" href="https://github.com/SeolA-0223" target="_blank" rel="noreferrer" aria-label="GitHub">
+            <i class="fab fa-github" aria-hidden="true"></i>
+          </a>
+          <a class="home-quick-link" href="news/" aria-label="News board">
+            <i class="fas fa-newspaper" aria-hidden="true"></i>
+          </a>
+          <a class="home-quick-link" href="research/" aria-label="Research page">
+            <i class="fas fa-microscope" aria-hidden="true"></i>
+          </a>
+          <a class="home-quick-link" href="contact/" aria-label="Contact page">
+            <i class="fas fa-envelope" aria-hidden="true"></i>
+          </a>
         </div>
       </section>
 
       <nav class="home-side-nav">
         <p class="home-sidebar-label">Navigation</p>
-        <a class="home-side-link is-active" href="#home">Home</a>
-        <a class="home-side-link" href="#about">About</a>
-        <a class="home-side-link" href="#focus">Focus</a>
-        <a class="home-side-link" href="#pages">Pages</a>
-        <a class="home-side-link" href="#member-access">Member Access</a>
+        <a class="home-side-link is-active" href="#home"><i class="fas fa-house" aria-hidden="true"></i><span>Home</span></a>
+        <a class="home-side-link" href="#about"><i class="fas fa-circle-info" aria-hidden="true"></i><span>About</span></a>
+        <a class="home-side-link" href="#focus"><i class="fas fa-bullseye" aria-hidden="true"></i><span>Focus</span></a>
+        <a class="home-side-link" href="#pages"><i class="fas fa-table-cells-large" aria-hidden="true"></i><span>Pages</span></a>
+        <a class="home-side-link" href="#member-access"><i class="fas fa-user-lock" aria-hidden="true"></i><span>Member Access</span></a>
       </nav>
 
       <div class="home-sidebar-block">
@@ -85,18 +98,21 @@
             so visitors can understand who you are, what you focus on, and where to go next without scanning a long page.
           </p>
           <div class="home-badges">
-            <span class="home-badge">GitHub Pages</span>
-            <span class="home-badge">Fixed Sidebar</span>
-            <span class="home-badge">Supabase Auth</span>
+            <span class="home-badge"><i class="fas fa-globe" aria-hidden="true"></i>GitHub Pages</span>
+            <span class="home-badge"><i class="fas fa-table-columns" aria-hidden="true"></i>260px Sidebar</span>
+            <span class="home-badge"><i class="fas fa-user-shield" aria-hidden="true"></i>Supabase Auth</span>
           </div>
           <div class="home-actions">
             <a class="button button-primary" href="https://github.com/SeolA-0223" target="_blank" rel="noreferrer">
+              <i class="fab fa-github" aria-hidden="true"></i>
               Visit GitHub
             </a>
             <a class="button button-secondary" href="news/">
+              <i class="fas fa-newspaper" aria-hidden="true"></i>
               Open board
             </a>
             <a class="button button-secondary" href="research/">
+              <i class="fas fa-microscope" aria-hidden="true"></i>
               Research page
             </a>
           </div>
@@ -109,7 +125,7 @@
             <p class="home-section-subtitle">Overview</p>
             <h2 class="home-section-title">The home page now explains the site structure before the details</h2>
           </div>
-          <a class="button button-secondary" href="team/">Open profile page</a>
+          <a class="button button-secondary" href="team/"><i class="fas fa-id-card" aria-hidden="true"></i>Open profile page</a>
         </div>
 
         <div class="home-card-grid home-card-grid-two">
@@ -135,12 +151,12 @@
             <p class="home-card-eyebrow">Structure</p>
             <h3 class="home-card-title">Main flows currently connected from this home page</h3>
             <div class="home-card-tags">
-              <span class="home-tag">News</span>
-              <span class="home-tag">Research</span>
-              <span class="home-tag">Publication</span>
-              <span class="home-tag">Team</span>
-              <span class="home-tag">Teaching</span>
-              <span class="home-tag">Contact</span>
+              <span class="home-tag"><i class="fas fa-newspaper" aria-hidden="true"></i>News</span>
+              <span class="home-tag"><i class="fas fa-microscope" aria-hidden="true"></i>Research</span>
+              <span class="home-tag"><i class="fas fa-file-lines" aria-hidden="true"></i>Publication</span>
+              <span class="home-tag"><i class="fas fa-users" aria-hidden="true"></i>Team</span>
+              <span class="home-tag"><i class="fas fa-book-open" aria-hidden="true"></i>Teaching</span>
+              <span class="home-tag"><i class="fas fa-envelope" aria-hidden="true"></i>Contact</span>
             </div>
             <p class="home-card-copy">
               This landing page is now the hub. The sidebar handles quick in-page jumps,
@@ -156,26 +172,26 @@
             <p class="home-section-subtitle">Research Areas</p>
             <h2 class="home-section-title">Three focus areas currently shaping the site</h2>
           </div>
-          <a class="button button-secondary" href="research/">Open research page</a>
+          <a class="button button-secondary" href="research/"><i class="fas fa-microscope" aria-hidden="true"></i>Open research page</a>
         </div>
 
         <div class="home-card-grid home-card-grid-three">
           <article class="card home-info-card">
-            <p class="home-card-eyebrow">Focus 01</p>
+            <p class="home-card-eyebrow"><i class="fas fa-lightbulb" aria-hidden="true"></i>Focus 01</p>
             <h3 class="home-card-title">Creative technology</h3>
             <p class="home-card-copy">
               Interactive web experiences, visual storytelling, and front-end work with a clear visual point of view.
             </p>
           </article>
           <article class="card home-info-card">
-            <p class="home-card-eyebrow">Focus 02</p>
+            <p class="home-card-eyebrow"><i class="fas fa-robot" aria-hidden="true"></i>Focus 02</p>
             <h3 class="home-card-title">AI-assisted making</h3>
             <p class="home-card-copy">
               Tool-supported workflows that move from idea to draft to finished output with less friction.
             </p>
           </article>
           <article class="card home-info-card">
-            <p class="home-card-eyebrow">Focus 03</p>
+            <p class="home-card-eyebrow"><i class="fas fa-diagram-project" aria-hidden="true"></i>Focus 03</p>
             <h3 class="home-card-title">Personal systems</h3>
             <p class="home-card-copy">
               Repeatable structures for notes, projects, experiments, and the way they connect back to the site.
@@ -194,40 +210,40 @@
 
         <div class="home-card-grid home-card-grid-three">
           <article class="card home-info-card">
-            <p class="home-card-eyebrow">News</p>
+            <p class="home-card-eyebrow"><i class="fas fa-newspaper" aria-hidden="true"></i>News</p>
             <h3 class="home-card-title">Updates and live board</h3>
             <p class="home-card-copy">Announcements, logs, comments, and the live Supabase-backed board.</p>
-            <a class="text-link" href="news/">Open page</a>
+            <a class="text-link" href="news/"><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>Open page</a>
           </article>
           <article class="card home-info-card">
-            <p class="home-card-eyebrow">Publication</p>
+            <p class="home-card-eyebrow"><i class="fas fa-file-lines" aria-hidden="true"></i>Publication</p>
             <h3 class="home-card-title">Featured output</h3>
             <p class="home-card-copy">Selected projects and artifacts you want visitors to notice first.</p>
-            <a class="text-link" href="publication/">Open page</a>
+            <a class="text-link" href="publication/"><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>Open page</a>
           </article>
           <article class="card home-info-card">
-            <p class="home-card-eyebrow">Teaching</p>
+            <p class="home-card-eyebrow"><i class="fas fa-book-open" aria-hidden="true"></i>Teaching</p>
             <h3 class="home-card-title">Learning archive</h3>
             <p class="home-card-copy">Study tracks, notes, and reusable reference material.</p>
-            <a class="text-link" href="teaching/">Open page</a>
+            <a class="text-link" href="teaching/"><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>Open page</a>
           </article>
           <article class="card home-info-card">
-            <p class="home-card-eyebrow">Team</p>
+            <p class="home-card-eyebrow"><i class="fas fa-users" aria-hidden="true"></i>Team</p>
             <h3 class="home-card-title">Profile and role</h3>
             <p class="home-card-copy">A compact summary of who you are and how you work.</p>
-            <a class="text-link" href="team/">Open page</a>
+            <a class="text-link" href="team/"><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>Open page</a>
           </article>
           <article class="card home-info-card">
-            <p class="home-card-eyebrow">Research</p>
+            <p class="home-card-eyebrow"><i class="fas fa-microscope" aria-hidden="true"></i>Research</p>
             <h3 class="home-card-title">Themes and questions</h3>
             <p class="home-card-copy">Current interests, topics, and the direction behind the site.</p>
-            <a class="text-link" href="research/">Open page</a>
+            <a class="text-link" href="research/"><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>Open page</a>
           </article>
           <article class="card home-info-card">
-            <p class="home-card-eyebrow">Contact</p>
+            <p class="home-card-eyebrow"><i class="fas fa-envelope" aria-hidden="true"></i>Contact</p>
             <h3 class="home-card-title">Contact channels</h3>
             <p class="home-card-copy">Short, practical links for code, reach-out, and public identity.</p>
-            <a class="text-link" href="contact/">Open page</a>
+            <a class="text-link" href="contact/"><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>Open page</a>
           </article>
         </div>
       </section>
