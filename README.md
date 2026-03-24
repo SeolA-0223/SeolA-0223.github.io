@@ -2,6 +2,8 @@
 
 Static GitHub Pages site for the `SeolA-0223` account.
 
+Default language is Korean at the root site, with a separate English version under `/en/`.
+
 ## Repository Name
 
 For a personal GitHub Pages site, the remote repository should be:
@@ -13,6 +15,7 @@ The local folder can still be named `SeolA-0223`.
 ## Files
 
 - `index.html`: main page
+- `en/`: English page set
 - `styles.css`: page styles
 - `auth.js`: shared Supabase Auth client for sign-up, sign-in, session sync, and sign-out
 - `news/index.html`: Supabase-backed board page

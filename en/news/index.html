@@ -1,39 +1,39 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>뉴스 | SeolA-0223</title>
-  <meta name="description" content="SeolA-0223의 업데이트와 공지를 확인하는 페이지입니다.">
+  <title>News | SeolA-0223</title>
+  <meta name="description" content="Updates and announcements for SeolA-0223.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Noto+Sans+KR:wght@400;500;700&display=swap"
     rel="stylesheet"
   >
-  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../../styles.css">
 </head>
 <body class="page-board">
   <div class="page-shell">
     <header class="site-header surface">
       <a class="brand" href="../">SeolA-0223</a>
       <nav class="site-nav" aria-label="Primary">
-        <a class="nav-link" href="../">홈</a>
-        <a class="nav-link is-active" href="./">뉴스</a>
-        <a class="nav-link" href="../research/">연구</a>
-        <a class="nav-link" href="../publication/">작업물</a>
-        <a class="nav-link" href="../team/">팀</a>
-        <a class="nav-link" href="../teaching/">학습</a>
-        <a class="nav-link" href="../contact/">연락</a>
-        <div class="site-language-switcher" aria-label="언어 선택">
-          <a class="language-link is-active" href="./" lang="ko">KR</a>
-          <a class="language-link" href="../en/news/" lang="en">EN</a>
+        <a class="nav-link" href="../">Home</a>
+        <a class="nav-link is-active" href="./">News</a>
+        <a class="nav-link" href="../research/">Research</a>
+        <a class="nav-link" href="../publication/">Publication</a>
+        <a class="nav-link" href="../team/">Team</a>
+        <a class="nav-link" href="../teaching/">Teaching</a>
+        <a class="nav-link" href="../contact/">Contact</a>
+        <div class="site-language-switcher" aria-label="Language selector">
+          <a class="language-link" href="../../news/" lang="ko">KR</a>
+          <a class="language-link is-active" href="./" lang="en">EN</a>
         </div>
         <div class="site-auth-bar" id="site-auth-bar">
-          <p class="site-auth-chip" id="site-auth-chip">게스트</p>
-          <a class="button button-secondary" id="site-auth-entry" href="../#member-access">로그인</a>
+          <p class="site-auth-chip" id="site-auth-chip">Guest</p>
+          <a class="button button-secondary" id="site-auth-entry" href="../#member-access">Sign in</a>
           <button class="button button-secondary is-hidden" data-site-auth-action="logout" type="button">
-            로그아웃
+            Sign out
           </button>
         </div>
       </nav>
@@ -42,41 +42,41 @@
     <main>
       <section class="page-hero surface hero-grid">
         <div class="hero-main">
-          <p class="eyebrow">커뮤니티 게시판</p>
-          <h1 class="page-title page-title-small">댓글, 본인 삭제, 관리자 도구를 갖춘 실시간 게시판입니다.</h1>
+          <p class="eyebrow">Community Board</p>
+          <h1 class="page-title page-title-small">A live bulletin board with comments, self-delete, and admin tools.</h1>
           <p class="page-copy">
-            방문자는 이 페이지에서 바로 짧은 글을 남길 수 있습니다. 아래 피드는 Supabase 프로젝트의
-            <code>board_posts</code>와 <code>board_comments</code> 테이블을 읽습니다.
+            Visitors can leave short posts directly from this page. The feed below reads from the
+            <code>board_posts</code> and <code>board_comments</code> tables in your Supabase project.
           </p>
           <div class="hero-actions">
             <button class="button button-primary" id="refresh-board" type="button">
-              게시물 새로고침
+              Refresh posts
             </button>
             <a class="button button-secondary" href="https://supabase.com/dashboard" target="_blank" rel="noreferrer">
-              Supabase 열기
+              Open Supabase
             </a>
           </div>
         </div>
 
         <aside class="hero-aside surface-strong">
-          <p class="section-label">게시판 상태</p>
+          <p class="section-label">Board Status</p>
           <div class="board-stat-grid">
             <div class="board-stat">
               <strong id="board-count">0</strong>
-              <span>불러온 게시물</span>
+              <span>Loaded posts</span>
             </div>
             <div class="board-stat">
               <strong id="comment-count">0</strong>
-              <span>불러온 댓글</span>
+              <span>Loaded comments</span>
             </div>
             <div class="board-stat">
-              <strong id="board-session-state">게스트</strong>
-              <span>세션</span>
+              <strong id="board-session-state">Guest</strong>
+              <span>Session</span>
             </div>
           </div>
-          <p class="field-note board-updated-note">마지막 새로고침 <span id="board-updated">-</span></p>
+          <p class="field-note board-updated-note">Last refresh <span id="board-updated">-</span></p>
           <p class="board-status board-status-loading" id="board-status" aria-live="polite">
-            Supabase 연결을 확인하는 중...
+            Checking Supabase connection...
           </p>
         </aside>
       </section>
@@ -85,25 +85,25 @@
         <div class="board-layout">
           <div class="board-sidebar">
             <article class="card board-composer">
-              <p class="section-label">작성</p>
-              <h2>새 메시지 작성</h2>
+              <p class="section-label">Write</p>
+              <h2>Post a new message</h2>
               <p class="section-copy">
-                새 게시글은 공개됩니다. 나중에 직접 삭제하려면 지금 삭제 비밀번호를 함께 입력하세요.
+                New posts are public. Add a delete password now if you want to remove your own post later.
               </p>
 
               <form class="board-form" id="board-form">
                 <label class="field">
-                  <span class="field-label">작성자</span>
+                  <span class="field-label">Name</span>
                   <input class="field-input" id="board-name" name="name" type="text" maxlength="40" required>
                 </label>
 
                 <label class="field">
-                  <span class="field-label">제목</span>
+                  <span class="field-label">Title</span>
                   <input class="field-input" id="board-title" name="title" type="text" maxlength="120" required>
                 </label>
 
                 <label class="field">
-                  <span class="field-label">내용</span>
+                  <span class="field-label">Message</span>
                   <textarea
                     class="field-input field-textarea"
                     id="board-content"
@@ -115,7 +115,7 @@
                 </label>
 
                 <label class="field">
-                  <span class="field-label">삭제 비밀번호</span>
+                  <span class="field-label">Delete password</span>
                   <input
                     class="field-input"
                     id="board-delete-password"
@@ -128,30 +128,30 @@
                 </label>
 
                 <div class="board-form-footer">
-                  <p class="field-note">HTML은 렌더링되지 않습니다. 삭제 비밀번호는 이 게시글을 나중에 삭제할 때만 사용됩니다.</p>
+                  <p class="field-note">HTML is not rendered. The delete password is used only for deleting this post later.</p>
                   <button class="button button-primary" id="board-submit" type="submit">
-                    게시하기
+                    Publish post
                   </button>
                 </div>
               </form>
             </article>
 
             <article class="card board-admin-panel">
-              <p class="section-label">관리자</p>
-              <h2>관리자 로그인</h2>
+              <p class="section-label">Admin</p>
+              <h2>Moderator login</h2>
               <p class="section-copy">
-                Supabase Auth 이메일/비밀번호 계정으로 로그인하세요. 이 계정은
-                <code>private.board_admins</code>에도 추가되어 있어야 합니다.
+                Sign in with a Supabase Auth email/password account that has also been added to
+                <code>private.board_admins</code>.
               </p>
 
               <form class="board-form" id="admin-login-form">
                 <label class="field">
-                  <span class="field-label">관리자 이메일</span>
+                  <span class="field-label">Admin email</span>
                   <input class="field-input" id="admin-email" name="email" type="email" autocomplete="username" required>
                 </label>
 
                 <label class="field">
-                  <span class="field-label">비밀번호</span>
+                  <span class="field-label">Password</span>
                   <input
                     class="field-input"
                     id="admin-password"
@@ -163,19 +163,19 @@
                 </label>
 
                 <div class="board-form-footer">
-                  <p class="field-note">관리자 삭제 버튼은 로그인과 허용 목록 확인이 모두 성공한 뒤에만 나타납니다.</p>
+                  <p class="field-note">Admin delete controls appear only after a successful login and allowlist check.</p>
                   <button class="button button-secondary" id="admin-login-button" type="submit">
-                    로그인
+                    Sign in
                   </button>
                 </div>
               </form>
 
               <div class="admin-session" id="admin-session" aria-live="polite">
-                <p class="board-empty">로그아웃됨. 관리자 삭제 버튼은 숨겨져 있습니다.</p>
+                <p class="board-empty">Signed out. Admin delete controls are hidden.</p>
               </div>
 
               <button class="button button-secondary is-hidden" id="admin-logout" type="button">
-                로그아웃
+                Sign out
               </button>
             </article>
           </div>
@@ -183,13 +183,13 @@
           <article class="card board-feed-panel">
             <div class="board-feed-head">
               <div>
-                <p class="section-label">피드</p>
-                <h2>최근 게시물</h2>
+                <p class="section-label">Feed</p>
+                <h2>Recent posts</h2>
               </div>
-              <p class="field-note">최신 게시물이 먼저 보입니다. 각 게시물에는 댓글을 달 수 있습니다.</p>
+              <p class="field-note">Newest posts appear first. Each post can receive comments.</p>
             </div>
             <div class="board-feed" id="board-posts" aria-live="polite">
-              <p class="board-empty">게시물을 불러오는 중...</p>
+              <p class="board-empty">Loading posts...</p>
             </div>
           </article>
         </div>
@@ -198,22 +198,22 @@
       <section class="section-stack">
         <div class="grid-2">
           <article class="card">
-            <p class="section-label">기능</p>
-            <h3>이 게시판이 지원하는 기능</h3>
+            <p class="section-label">Features</p>
+            <h3>What this board supports</h3>
             <ul class="bullet-list">
-              <li>비밀번호 기반 본인 삭제가 가능한 공개 게시글</li>
-              <li>각 게시글 아래에 저장되는 댓글</li>
-              <li>Supabase Auth 기반 관리자 로그인</li>
-              <li>댓글까지 함께 지우는 관리자 삭제</li>
+              <li>Public posts with password-based self-delete</li>
+              <li>Comments stored under each post</li>
+              <li>Admin login through Supabase Auth</li>
+              <li>Admin delete with comment cascade</li>
             </ul>
           </article>
           <article class="card">
-            <p class="section-label">마이그레이션</p>
-            <h3>업데이트된 SQL 다시 실행하기</h3>
+            <p class="section-label">Migration</p>
+            <h3>Run the updated SQL again</h3>
             <p>
-              이번 업데이트는 <code>board_comments</code>, RPC 함수, 관리자 허용 목록을 추가합니다.
-              <code>supabase/setup-board.sql</code>을 다시 실행한 뒤 관리자 이메일을
-              <code>private.board_admins</code>에 넣으세요.
+              This upgrade adds <code>board_comments</code>, RPC functions, and an admin allowlist.
+              Rerun <code>supabase/setup-board.sql</code>, then insert your admin email into
+              <code>private.board_admins</code>.
             </p>
           </article>
         </div>
@@ -221,12 +221,12 @@
     </main>
 
     <footer class="footer surface">
-      <p>GitHub Pages로 호스팅 중</p>
+      <p>Hosted with GitHub Pages</p>
       <a href="https://github.com/SeolA-0223" target="_blank" rel="noreferrer">@SeolA-0223</a>
     </footer>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="../auth.js" defer></script>
-  <script src="./board.js" defer></script>
+  <script src="../../auth.js" defer></script>
+  <script src="../../news/board.js" defer></script>
 </body>
 </html>
