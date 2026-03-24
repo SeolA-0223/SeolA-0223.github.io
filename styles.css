@@ -115,9 +115,10 @@ a {
 
 .site-language-switcher {
   display: flex;
+  flex: 0 0 auto;
   align-items: center;
   gap: 6px;
-  margin-left: 8px;
+  margin-left: auto;
   padding-left: 12px;
   border-left: 1px solid var(--line);
 }
@@ -126,9 +127,10 @@ a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 48px;
+  width: 56px;
+  min-width: 56px;
   min-height: 42px;
-  padding: 0 14px;
+  padding: 0;
   border-radius: 999px;
   border: 1px solid var(--line);
   background: rgba(255, 255, 255, 0.03);
@@ -157,6 +159,7 @@ a {
 
 .site-auth-bar {
   display: flex;
+  flex: 0 0 auto;
   align-items: center;
   gap: 10px;
   margin-left: 8px;
@@ -165,7 +168,8 @@ a {
 }
 
 .site-auth-chip {
-  max-width: 220px;
+  width: 132px;
+  max-width: none;
   margin: 0;
   padding: 10px 14px;
   border-radius: 999px;
@@ -185,6 +189,7 @@ a {
 }
 
 .site-auth-bar .button {
+  min-width: 96px;
   min-height: 42px;
   padding: 0 16px;
 }
