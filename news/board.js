@@ -44,7 +44,8 @@
   }
 
   const { createClient } = window.supabase;
-  const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+  const supabase =
+    window.siteSupabaseClient || createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
   function setStatus(message, tone) {
     statusElement.textContent = message;

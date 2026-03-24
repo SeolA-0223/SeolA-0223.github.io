@@ -28,6 +28,13 @@
         <a class="nav-link" href="team/">Team</a>
         <a class="nav-link" href="teaching/">Teaching</a>
         <a class="nav-link" href="contact/">Contact</a>
+        <div class="site-auth-bar" id="site-auth-bar">
+          <p class="site-auth-chip" id="site-auth-chip">Guest</p>
+          <a class="button button-secondary" id="site-auth-entry" href="#member-access">Sign in</a>
+          <button class="button button-secondary is-hidden" data-site-auth-action="logout" type="button">
+            Sign out
+          </button>
+        </div>
       </nav>
     </header>
 
@@ -163,6 +170,110 @@
           </article>
         </div>
       </section>
+
+      <section class="section-stack" id="member-access">
+        <div class="section-heading">
+          <p class="section-label">Member Access</p>
+          <h2 class="section-title">Add account-based access without leaving GitHub Pages</h2>
+          <p class="section-copy">
+            This site now uses Supabase Auth for email/password sign-up and sign-in. Sessions persist
+            across every page, including the live board.
+          </p>
+        </div>
+
+        <p class="board-status board-status-loading" id="site-auth-status" aria-live="polite">
+          Checking your current session...
+        </p>
+
+        <div class="grid-3 auth-grid">
+          <article class="card auth-panel" data-site-auth-guest>
+            <p class="section-label">Sign Up</p>
+            <h3>Create a member account</h3>
+            <p class="section-copy">
+              Use an email address and password to create a reusable account for this site.
+            </p>
+
+            <form class="board-form" id="site-signup-form">
+              <label class="field">
+                <span class="field-label">Email</span>
+                <input class="field-input" name="email" type="email" autocomplete="email" required>
+              </label>
+
+              <label class="field">
+                <span class="field-label">Password</span>
+                <input
+                  class="field-input"
+                  name="password"
+                  type="password"
+                  minlength="6"
+                  autocomplete="new-password"
+                  required
+                >
+              </label>
+
+              <div class="board-form-footer">
+                <p class="field-note">If email confirmation is enabled in Supabase, a confirmation email will be sent.</p>
+                <button class="button button-primary" id="site-signup-button" type="submit">
+                  Create account
+                </button>
+              </div>
+            </form>
+          </article>
+
+          <article class="card auth-panel" data-site-auth-guest>
+            <p class="section-label">Login</p>
+            <h3>Restore an existing session</h3>
+            <p class="section-copy">
+              Sign in with the same email/password account to reuse your member session on every page.
+            </p>
+
+            <form class="board-form" id="site-login-form">
+              <label class="field">
+                <span class="field-label">Email</span>
+                <input class="field-input" name="email" type="email" autocomplete="username" required>
+              </label>
+
+              <label class="field">
+                <span class="field-label">Password</span>
+                <input
+                  class="field-input"
+                  name="password"
+                  type="password"
+                  autocomplete="current-password"
+                  required
+                >
+              </label>
+
+              <div class="board-form-footer">
+                <p class="field-note">This uses the same Supabase Auth project as the admin board login.</p>
+                <button class="button button-secondary" id="site-login-button" type="submit">
+                  Sign in
+                </button>
+              </div>
+            </form>
+          </article>
+
+          <article class="card auth-panel">
+            <p class="section-label">Session</p>
+            <h3>Current member status</h3>
+            <div class="auth-summary">
+              <p class="field-note">Signed-in email</p>
+              <p class="auth-session-email" id="site-auth-email">Not signed in</p>
+              <p class="auth-session-copy" id="site-auth-state">
+                Guest mode is active. Create an account or sign in to restore your session.
+              </p>
+            </div>
+            <div class="auth-member-actions is-hidden" data-site-auth-user>
+              <button class="button button-secondary" data-site-auth-action="logout" type="button">
+                Sign out
+              </button>
+            </div>
+            <p class="field-note" data-site-auth-guest>
+              Once you sign in, the session state here and in the header updates automatically.
+            </p>
+          </article>
+        </div>
+      </section>
     </main>
 
     <footer class="footer surface">
@@ -170,5 +281,7 @@
       <a href="https://github.com/SeolA-0223" target="_blank" rel="noreferrer">@SeolA-0223</a>
     </footer>
   </div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="./auth.js" defer></script>
 </body>
 </html>

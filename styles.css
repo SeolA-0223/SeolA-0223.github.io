@@ -108,8 +108,43 @@ a {
 .site-nav {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   justify-content: flex-end;
   gap: 8px;
+}
+
+.site-auth-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 8px;
+  padding-left: 12px;
+  border-left: 1px solid var(--line);
+}
+
+.site-auth-chip {
+  max-width: 220px;
+  margin: 0;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--muted);
+  font: 700 0.78rem/1 "Space Grotesk", sans-serif;
+  letter-spacing: 0.02em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.site-auth-chip.is-active {
+  color: var(--brand);
+  border-color: rgba(115, 255, 210, 0.24);
+}
+
+.site-auth-bar .button {
+  min-height: 42px;
+  padding: 0 16px;
 }
 
 .nav-link {
@@ -423,6 +458,49 @@ main {
 
 .profile-card {
   min-height: 100%;
+}
+
+.auth-grid {
+  align-items: start;
+}
+
+.auth-panel {
+  display: grid;
+  gap: 18px;
+}
+
+.auth-panel h3 {
+  margin: 0;
+  font-size: 1.55rem;
+}
+
+.auth-panel .board-form {
+  margin-top: 0;
+}
+
+.auth-summary {
+  display: grid;
+  gap: 10px;
+}
+
+.auth-session-email {
+  margin: 0;
+  color: var(--text);
+  font: 700 1.12rem/1.35 "Space Grotesk", sans-serif;
+  letter-spacing: -0.02em;
+  word-break: break-word;
+}
+
+.auth-session-copy {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.auth-member-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 .board-layout {
@@ -810,6 +888,12 @@ main {
     justify-content: flex-start;
   }
 
+  .site-auth-bar {
+    margin-left: 0;
+    padding-left: 0;
+    border-left: 0;
+  }
+
   .hero-grid,
   .split-panel,
   .grid-3,
@@ -874,6 +958,12 @@ main {
   .board-feed-head,
   .board-form-footer {
     align-items: flex-start;
+  }
+
+  .site-auth-bar {
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
   }
 
   .board-post-actions {

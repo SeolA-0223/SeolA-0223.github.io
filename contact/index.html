@@ -25,6 +25,13 @@
         <a class="nav-link" href="../team/">Team</a>
         <a class="nav-link" href="../teaching/">Teaching</a>
         <a class="nav-link is-active" href="./">Contact</a>
+        <div class="site-auth-bar" id="site-auth-bar">
+          <p class="site-auth-chip" id="site-auth-chip">Guest</p>
+          <a class="button button-secondary" id="site-auth-entry" href="../#member-access">Sign in</a>
+          <button class="button button-secondary is-hidden" data-site-auth-action="logout" type="button">
+            Sign out
+          </button>
+        </div>
       </nav>
     </header>
 
@@ -66,5 +73,7 @@
       <a href="https://github.com/SeolA-0223" target="_blank" rel="noreferrer">@SeolA-0223</a>
     </footer>
   </div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../auth.js" defer></script>
 </body>
 </html>

@@ -14,6 +14,7 @@ The local folder can still be named `SeolA-0223`.
 
 - `index.html`: main page
 - `styles.css`: page styles
+- `auth.js`: shared Supabase Auth client for sign-up, sign-in, session sync, and sign-out
 - `news/index.html`: Supabase-backed board page
 - `news/board.js`: browser client for posts, comments, self-delete, and admin auth
 - `supabase/setup-board.sql`: SQL for posts, comments, RPC helpers, and admin policies
@@ -31,6 +32,14 @@ The local folder can still be named `SeolA-0223`.
 3. If you already ran an older version of the SQL, run the updated file again.
 4. Push this repository and open `/news/`.
 5. Use the board form to create posts and comments.
+
+## Site Member Auth Setup
+
+1. Open Supabase Auth for project `uisuogutyhjnmgbgbdjs`.
+2. Make sure Email provider sign-in is enabled.
+3. Add `https://seola-0223.github.io` to the Site URL / redirect allow list.
+4. Push this repository and open the home page.
+5. Use the new Member Access section to sign up, sign in, and sign out.
 
 ## Admin Login Setup
 
